@@ -1,0 +1,9 @@
+<h1>Tweets</h1>
+
+<% if Current.user.twitter_accounts.any? %>
+    <%= button_to "Schedule a tweet", "/tweets/new", method: :get, class: "btn btn-primary" %>
+<% end %>
+
+<% if Current.user.twitter_accounts.none? %>
+    <%= button_to "Connect Your Twitter Account", "/auth/twitter", method: :post, class: "btn btn-primary" %>
+<% end %>
